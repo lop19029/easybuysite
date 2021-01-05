@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>EasyBuy.com | Buy books, electronics, 
+            Home & Kitchen"</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">    
+    </head>
+    <body>
+        <header>
+            <img id = "logoimg" src="logo.png" alt="easybuy.com logo">
+        </header>
+            <h1>Products OFF!</h1>
+            <form onsubmit="return validateForm()" action="assign11.php" method="POST"> 
+                <fieldset class = "customerInfo">
+                    <legend>Customer information</legend>
+                    <p class = "generalAlert" id="generalAlertId"></p><br>
+                    <label for = "first_name">First name</label><br>
+                    <input type = "text" id="first_name" name = "first_name"><br>
+                    <label for = "last_name">Last name</label><br>
+                    <input type = "text" id = "last_name" name = "last_name"><br>
+                    <label for = "address">Delivery address</label><br>
+                    <textarea id = "address" name="address"></textarea><br>
+                    <label for = "phone">Phone</label><br>
+                    <input type = "text" id = "phone" name="phone" placeholder="208-555-5555" onchange="validatePhone()"><br>
+                    <p class="alert" id="phoneAlert"></p><br><br>
+                </fieldset>
+                <fieldset class = "cartInfo">
+                    <legend>Cart</legend>
+                    <p id = "cartTitle">Select one or more items</p><br>
+                    <input type="checkbox" id="item_0" name="check_list[]" value="'The Deep End' Book - $9.46" onclick="addItems()">
+                    <label for="item_0"> "The Deep End" Book - $9.46</label><br>
+                    <input type="checkbox" id="item_1" name="check_list[]" value="LG Electronics 32' Smart TV - $209.99" onclick="addItems()">
+                    <label for="item_1"> LG Electronics 32' Smart TV - $209.99</label><br>
+                    <input type="checkbox" id="item_2" name="check_list[]" value="Multifinctional LED Desk Lamp - $39.99" onclick="addItems()">
+                    <label for="item_2"> Multifinctional LED Desk Lamp - $39.99</label><br>
+                    <input type="checkbox" id="item_3" name="check_list[]" value="Wooden Spoons for Cooking - $14.97" onclick="addItems()">
+                    <label for="item_3"> Wooden Spoons for Cooking - $14.97</label><br>
+                    <br>
+                    <p>Total</p>
+                    <input type="text" id="total" name="total" readonly>
+                </fieldset>
+                <fieldset class="paymentInfo">
+                    <legend>Payment</legend>
+                    <p class = "generalAlert" id="alertCard"></p><br>
+                    <p>Credit Card Type</p>
+                    <input type="radio" id="visa" name = "card" value="VISA">
+                    <label for="visa">VISA</label><br>
+                    <input type="radio" id="masterc" name = "card" value="MASTERCARD">
+                    <label for="masterc">MASTERCARD</label><br>
+                    <input type="radio" id="americane" name = "card" value="AMERICAN EXPRESS">
+                    <label for="americane">AMERICAN EXPRESS</label><br><br>
+                    <label for="credit_card">Credit Card Number</label><br>
+                    <input type="text" id="credit_card" name="credit_card" placeholder="1111 1111 1111 1111"
+                    onchange="validateCard()"><br>
+                    <p class= "alert" id="credit_cardAlert"></p>
+                    <br><br>
+                    <label for="exp_date">Expiration Date</label><br>
+                    <input type="text" id="exp_date" name="exp_date" placeholder="01/2021" onchange="validateExpirationFormat()"><br>
+                    <p class="alert" id="exp_dateAlert"></p><br><br>
+                </fieldset>
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </form>
+        </body>
+</html>
